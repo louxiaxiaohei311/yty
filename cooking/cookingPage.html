@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜品列表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .dish {
+            background: #fff;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+        }
+        .dish img {
+            width: 100px; /* 图片宽度 */
+            height: auto;
+            border-radius: 5px;
+            margin-right: 15px;
+            cursor: pointer; /* 鼠标指针样式 */
+        }
+        .dish-description {
+            flex-grow: 1;
+        }
+        /* 放大图片的样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 5%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>菜品列表</h1>
+
+<div class="dish">
+    <img src="images/蛋挞.jpg" alt="蛋挞" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>蛋挞</h2>
+        <p>原料：鸡蛋、牛奶、蛋挞皮、白砂糖</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/地三鲜.jpg" alt="地三鲜" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>地三鲜</h2>
+        <p>原料：土豆、青椒、茄子</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/京酱肉丝.jpg" alt="京酱肉丝" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>京酱肉丝</h2>
+        <p>原料：肉丝、豆皮、胡萝卜、黄瓜、大葱</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/烤串.jpg" alt="烤串" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>烤串</h2>
+        <p>原料：猪肉</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/烤鸡腿.jpg" alt="烤鸡腿" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>烤鸡腿</h2>
+        <p>原料：鸡腿</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/辣子鸡丁.jpg" alt="辣子鸡丁" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>辣子鸡丁</h2>
+        <p>原料：鸡腿肉、红辣椒、香料若干</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/卤味.jpg" alt="卤味" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>卤味</h2>
+        <p>原料：鸡腿、牛肉、鸡蛋、香料若干</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/木须肉.jpg" alt="木须肉" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>木须肉</h2>
+        <p>原料：五花肉、木耳、胡萝卜、青椒、香菇</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/青椒火腿炒蛋.jpg" alt="青椒火腿炒蛋" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>青椒火腿炒蛋</h2>
+        <p>原料：青椒、火腿肠、鸡蛋</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/水饺.jpg" alt="水饺" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>水饺</h2>
+        <p>原料：面、肉馅、木耳、玉米、大葱</p>
+    </div>
+</div>
+
+<div class="dish">
+    <img src="images/酸辣土豆丝.jpg" alt="酸辣土豆丝" onclick="openModal(this)">
+    <div class="dish-description">
+        <h2>酸辣土豆丝</h2>
+        <p>原料：土豆</p>
+    </div>
+</div>
+
+<!-- 模态框 -->
+<div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<script>
+    function openModal(img) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        modal.style.display = "block";
+        modalImg.src = img.src; // 设置模态框中图片的源
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none"; // 关闭模态框
+    }
+</script>
+
+</body>
+</html>
