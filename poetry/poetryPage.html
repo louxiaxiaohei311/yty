@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗词歌赋</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .directory {
+            background: #fff;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 5px;
+            max-width: 600px;
+            text-align: center;
+        }
+        .directory a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>诗词歌赋</h1>
+
+<div class="directory">
+    <a href="travelPage.html">游历感怀</a>
+</div>
+
+<div class="directory">
+   <p><a href="#" onclick="checkPassword()">Z</a></p>
+</div>
+
+<script>
+    function checkPassword() {
+        var password = prompt("请输入密码：");
+        var correctPassword = "20240726"; 
+
+        if (password === correctPassword) {
+            window.location.href = "hongLi.html";
+        } else {
+            alert("呀呀呀，密码错误啦~"); 
+        }
+    }
+</script>
+
+</body>
+</html>
