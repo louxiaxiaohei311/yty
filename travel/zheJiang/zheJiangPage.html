@@ -17,11 +17,13 @@
         }
         .gallery {
             display: flex; /* 水平排列相册 */
+            flex-wrap: wrap; /* 允许换行 */
             gap: 30px; /* 相册之间的间距 */
+            justify-content: center; /* 居中对齐 */
         }
         .album {
-            width: 180px; /* 每个相册的宽度，设置为16:9比例 */
-            height: 320px; /* 每个相册的高度，设置为16:9比例 */
+            width: 180px; /* 每个相册的宽度 */
+            height: 320px; /* 每个相册的高度 */
             border: 2px solid #ccc;
             border-radius: 15px; /* 圆角 */
             overflow: hidden;
@@ -62,14 +64,38 @@
 <body>
 
 <div class="gallery">
-    <div class="album" onclick="window.location.href='jiangSu/jiangSuPage.html'">
-        <img src="images/album/江苏.jpg" alt="相册 1">
+    <div class="album" onclick="window.location.href='hangZhou/hangZhouPage.html'">
+        <img src="zheJiangPageAlbum/杭州.jpg" alt="杭州">
     </div>
-    <div class="album" onclick="window.location.href='zheJiang/zheJiangPage.html'">
-        <img src="images/album/浙江.jpg" alt="相册 2">
+    <div class="album" onclick="window.location.href='ningBo/ningBoPage.html'">
+        <img src="zheJiangPageAlbum/宁波.jpg" alt="宁波">
     </div>
-    <div class="album" onclick="window.location.href='shangHai/shangHaiPage.html'">
-        <img src="images/album/上海.jpg" alt="相册 3">
+    <div class="album" onclick="window.location.href='wenZhou/wenZhouPage.html'">
+        <img src="zheJiangPageAlbum/温州.jpg" alt="温州">
+    </div>
+    <div class="album" onclick="window.location.href='shaoXing/shaoXingPage.html'">
+        <img src="zheJiangPageAlbum/绍兴.jpg" alt="绍兴">
+    </div>
+    <div class="album" onclick="window.location.href='huZhou/huZhouPage.html'">
+        <img src="zheJiangPageAlbum/湖州.jpg" alt="湖州">
+    </div>
+    <div class="album" onclick="window.location.href='jiaXing/jiaXingPage.html'">
+        <img src="zheJiangPageAlbum/嘉兴.jpg" alt="嘉兴">
+    </div>
+    <div class="album" onclick="window.location.href='jinHua/jinHuaPage.html'">
+        <img src="zheJiangPageAlbum/金华.jpg" alt="金华">
+    </div>
+    <div class="album" onclick="window.location.href='quZhou/quZhouPage.html'">
+        <img src="zheJiangPageAlbum/衢州.jpg" alt="衢州">
+    </div>
+    <div class="album" onclick="window.location.href='taiZhou/taiZhouPage.html'">
+        <img src="zheJiangPageAlbum/台州.jpg" alt="台州">
+    </div>
+    <div class="album" onclick="window.location.href='liShui/liShuiPage.html'">
+        <img src="zheJiangPageAlbum/丽水.jpg" alt="丽水">
+    </div>
+    <div class="album" onclick="window.location.href='zhouShan/zhouShanPage.html'">
+        <img src="zheJiangPageAlbum/舟山.jpg" alt="舟山">
     </div>
 </div>
 
