@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相册展示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 使body占满整个视口高度 */
+        }
+        .gallery {
+            display: flex; /* 水平排列相册 */
+            flex-wrap: wrap; /* 允许换行 */
+            gap: 30px; /* 相册之间的间距 */
+            justify-content: center; /* 居中对齐 */
+        }
+        .album {
+            width: 180px; /* 每个相册的宽度 */
+            height: 320px; /* 每个相册的高度 */
+            border: 2px solid #ccc;
+            border-radius: 15px; /* 圆角 */
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s; /* 添加平滑过渡 */
+            position: relative; /* 用于定位封面图 */
+            background-color: #fff; /* 相册背景色 */
+        }
+        .album img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s; /* 添加图片平滑过渡 */
+        }
+        .album:hover {
+            transform: scale(1.05); /* 悬停时放大效果 */
+        }
+        .album:hover img {
+            transform: scale(1.1); /* 悬停时图片放大 */
+        }
+        .album::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.5); /* 半透明效果 */
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+        .album:hover::after {
+            opacity: 1; /* 悬停时显示半透明层 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <div class="album" onclick="window.location.href='subPage/nanJing/nanJingPage.html'">
+        <img src="images/南京.jpg" alt="南京">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/wuXi/wuXiPage.html'">
+        <img src="images/无锡.jpg" alt="无锡">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/xuZhou/xuZhouPage.html'">
+        <img src="images/徐州.jpg" alt="徐州">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/changZhou/changZhouPage.html'">
+        <img src="images/常州.jpg" alt="常州">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/suZhou/suZhouPage.html'">
+        <img src="images/苏州.jpg" alt="苏州">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/nanTong/nanTongPage.html'">
+        <img src="images/南通.jpg" alt="南通">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/lianYunGang/lianYunGangPage.html'">
+        <img src="images/连云港.jpg" alt="连云港">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/huaiAn/huaiAnPage.html'">
+        <img src="images/淮安.jpg" alt="淮安">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/yanCheng/yanChengPage.html'">
+        <img src="images/盐城.jpg" alt="盐城">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/yangZhou/yangZhouPage.html'">
+        <img src="images/扬州.jpg" alt="扬州">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/zhenJiang/zhenJiangPage.html'">
+        <img src="images/镇江.jpg" alt="镇江">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/taiZhou/taiZhouPage.html'">
+        <img src="images/泰州.jpg" alt="泰州">
+    </div>
+    <div class="album" onclick="window.location.href='subPage/suQian/suQianPage.html'">
+        <img src="images/宿迁.jpg" alt="宿迁">
+    </div>
+</div>
+
+</body>
+</html>
