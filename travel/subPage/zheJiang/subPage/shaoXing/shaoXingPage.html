@@ -17,30 +17,29 @@
         }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3列 */
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             padding: 20px;
-            max-width: 800px; /* 控制九宫格的总宽度 */
+            max-width: 800px;
             width: 100%;
         }
         .gallery div {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 1 / 1; /* 确保单元格为正方形 */
+            aspect-ratio: 1 / 1;
         }
         .gallery img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 确保图片覆盖整个正方形格子 */
+            object-fit: cover;
             transition: transform 0.3s ease;
             cursor: pointer;
         }
         .gallery img:hover {
             transform: scale(1.05);
         }
-        /* 放大图片的模态框样式 */
         .modal {
-            display: none; /* 默认隐藏 */
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -56,15 +55,28 @@
             max-height: 90%;
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05); /* 保持图片放大 */
+            transition: transform 0.3s ease;
         }
-        /* 关闭按钮 */
-        .modal-close {
+        .modal-close, .modal-prev, .modal-next {
             position: absolute;
-            top: 20px;
-            right: 20px;
             color: white;
             font-size: 30px;
             cursor: pointer;
+            user-select: none;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .modal-close {
+            top: 20px;
+            right: 20px;
+            transform: none;
+        }
+        .modal-prev {
+            left: 20px;
+        }
+        .modal-next {
+            right: 20px;
         }
     </style>
 </head>
@@ -73,7 +85,7 @@
 <div class="gallery">
     <div><img src="images/image1.jpg" alt="图片1"></div>
     <div><img src="images/image2.jpg" alt="图片2"></div>
-    <div><img src="images/image3.jpg" alt="图片"></div>
+    <div><img src="images/image3.jpg" alt="图片3"></div>
     <div><img src="images/image4.jpg" alt="图片4"></div>
     <div><img src="images/image5.jpg" alt="图片5"></div>
     <div><img src="images/image6.jpg" alt="图片6"></div>
@@ -85,33 +97,56 @@
 <!-- 模态框 -->
 <div id="modal" class="modal">
     <span class="modal-close" id="closeModal">&times;</span>
+    <span class="modal-prev" id="prevModal">&#10094;</span>
     <img id="modalImg" src="" alt="放大图片">
+    <span class="modal-next" id="nextModal">&#10095;</span>
 </div>
 
 <script>
-    // 获取模态框和图片元素
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImg");
     const closeModal = document.getElementById("closeModal");
+    const prevModal = document.getElementById("prevModal");
+    const nextModal = document.getElementById("nextModal");
+    const images = document.querySelectorAll('.gallery img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        modalImg.src = images[index].src;
+        modalImg.style.transform = 'scale(1.05)'; // 确保每次切换时图片放大
+    }
 
     // 为每个图片添加点击事件
-    document.querySelectorAll('.gallery img').forEach(img => {
+    images.forEach((img, index) => {
         img.addEventListener('click', () => {
             modal.style.display = "flex"; // 显示模态框
-            modalImg.src = img.src; // 将点击的图片路径赋值给模态框中的图片
+            currentIndex = index; // 设置当前索引
+            showImage(currentIndex); // 显示当前图片
         });
     });
 
-    // 点击关闭按钮时关闭模态框
+    // 关闭模态框
     closeModal.addEventListener('click', () => {
         modal.style.display = "none";
     });
 
-    // 点击模态框外部也关闭模态框
+    // 点击模态框外部时关闭模态框
     modal.addEventListener('click', (e) => {
-        if (e.target !== modalImg) {
+        if (e.target !== modalImg && e.target !== prevModal && e.target !== nextModal) {
             modal.style.display = "none";
         }
+    });
+
+    // 上一张图片
+    prevModal.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    });
+
+    // 下一张图片
+    nextModal.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
     });
 </script>
 

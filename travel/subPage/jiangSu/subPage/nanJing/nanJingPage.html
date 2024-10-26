@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风景照</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .gallery div {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05); /* 保持图片放大 */
+            transition: transform 0.3s ease;
+        }
+        .modal-close, .modal-prev, .modal-next {
+            position: absolute;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            user-select: none;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .modal-close {
+            top: 20px;
+            right: 20px;
+            transform: none;
+        }
+        .modal-prev {
+            left: 20px;
+        }
+        .modal-next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <div><img src="images/image1.jpg" alt="图片1"></div>
+    <div><img src="images/image2.jpg" alt="图片2"></div>
+    <div><img src="images/image3.jpg" alt="图片3"></div>
+    <div><img src="images/image4.jpg" alt="图片4"></div>
+    <div><img src="images/image5.jpg" alt="图片5"></div>
+    <div><img src="images/image6.jpg" alt="图片6"></div>
+    <div><img src="images/image7.jpg" alt="图片7"></div>
+    <div><img src="images/image8.jpg" alt="图片8"></div>
+    <div><img src="images/image9.jpg" alt="图片9"></div>
+</div>
+
+<!-- 模态框 -->
+<div id="modal" class="modal">
+    <span class="modal-close" id="closeModal">&times;</span>
+    <span class="modal-prev" id="prevModal">&#10094;</span>
+    <img id="modalImg" src="" alt="放大图片">
+    <span class="modal-next" id="nextModal">&#10095;</span>
+</div>
+
+<script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+    const prevModal = document.getElementById("prevModal");
+    const nextModal = document.getElementById("nextModal");
+    const images = document.querySelectorAll('.gallery img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        modalImg.src = images[index].src;
+        modalImg.style.transform = 'scale(1.05)'; // 确保每次切换时图片放大
+    }
+
+    // 为每个图片添加点击事件
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            modal.style.display = "flex"; // 显示模态框
+            currentIndex = index; // 设置当前索引
+            showImage(currentIndex); // 显示当前图片
+        });
+    });
+
+    // 关闭模态框
+    closeModal.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    // 点击模态框外部时关闭模态框
+    modal.addEventListener('click', (e) => {
+        if (e.target !== modalImg && e.target !== prevModal && e.target !== nextModal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // 上一张图片
+    prevModal.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    });
+
+    // 下一张图片
+    nextModal.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    });
+</script>
+
+</body>
+</html>
