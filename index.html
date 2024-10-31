@@ -5,46 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人主页</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        html, body {
+            height: 100%; /* 让 html 和 body 占满整个视口 */
+            margin: 0; /* 去掉默认的边距 */
         }
+        
+        body {
+            display: flex;
+            flex-direction: column; /* 垂直排列 */
+            font-family: Arial, sans-serif;
+            background-image: url('image/海洋.jpg'); /* 背景图片路径 */
+            background-size: cover; /* 背景图片覆盖整个区域 */
+            background-position: center; /* 背景图片居中 */
+        }
+        
         header {
-            background: #333;
+            background: rgba(51, 51, 51, 0.5); /* 半透明背景 */
             color: #fff;
             padding: 20px;
             text-align: center;
         }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            text-decoration: none;
-        }
+        
         section {
+            flex: 1; /* 让这个部分占据剩余空间 */
             padding: 20px;
-            background: #fff;
+            background: transparent; /* 设置为透明 */
             margin: 20px;
             border-radius: 5px;
+            position: relative; /* 为绝对定位的子元素提供参考 */
+            height: 400px; /* 定义区域高度 */
+            overflow: hidden; /* 防止按钮超出区域 */
         }
-        .portfolio img {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
+        
+        .portfolio {
+            position: absolute; /* 绝对定位容器 */
+        }
+        
+        .button {
+            display: flex; /* 使用 flexbox */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            color: #fff; /* 文字颜色 */
+            text-decoration: none;
+            border: none; /* 去掉边框 */
             border-radius: 5px;
+            position: absolute; /* 绝对定位按钮 */
+            white-space: nowrap; /* 防止文字换行 */
+            transition: color 0.3s; /* 颜色变化过渡 */
+            background-size: cover; /* 背景图片覆盖 */
+            background-position: center; /* 背景居中 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
         }
+        
+        .button:nth-child(1) {
+            background-image: url('image/鲨鱼.png');
+            width: 150px;
+            height: 100px;
+        }
+        
+        .button:nth-child(2) {
+            background-image: url('image/鲸鱼.png');
+            width: 300px; 
+            height: 100px; 
+        }
+        
+        .button:nth-child(3) {
+            background-image: url('image/海龟.png'); 
+            width: 200px;
+            height: 100px;
+        }
+        
+        .button:hover {
+            color: #2E7D32; /* 悬停时的颜色变化 */
+        }
+        
         footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
+            background: rgba(51, 51, 51, 0.5); /* 半透明背景 */
             color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -52,56 +91,59 @@
 
 <header>
     <h1>欢迎来到我的个人主页</h1>
-    <nav>
-        <a href="#about">个人简介</a>
-        <a href="#portfolio">作品集</a>
-        <a href="#skills">技能</a>
-        <a href="#contact">联系方式</a>
-        <a href="#education">教育背景</a>
-    </nav>
 </header>
 
-<section id="about">
-    <h2>个人简介</h2>
-    <p>颜廷宇</p>
-</section>
-
 <section id="portfolio">
-    <h2>作品集</h2>
     <div class="portfolio">
-        <a href="poem/poemPage.html">诗词</a>
-        <a href="cooking/cookingPage.html">美食</a>
-        <a href="travel/travelPage.html">旅游</a>
+        <a class="button" href="poem/poemPage.html">诗词</a>
+        <a class="button" href="cooking/cookingPage.html">美食</a>
+        <a class="button" href="travel/travelPage.html">旅游</a>
     </div>
 </section>
 
-<section id="skills">
-    <h2>技能</h2>
-    <ul>
-        <li>编程语言：C++, Python, Java</li>
-        <li>Web 开发：HTML, CSS, JavaScript</li>
-        <li>工具和框架：Git, React, Node.js</li>
-    </ul>
-</section>
-
-<section id="contact">
-    <h2>联系方式</h2>
-    <p>你可以通过以下方式联系我：</p>
-    <ul>
-        <li>电子邮箱：example@example.com</li>
-        <li>电话：123-456-7890</li>
-        <li>社交媒体链接：<a href="#">LinkedIn</a></li>
-    </ul>
-</section>
-
-<section id="education">
-    <h2>教育背景</h2>
-    <p>这里是你的教育背景内容，包括学校名称、学位和时间。</p>
-</section>
-
 <footer>
-    <p>© 2024 你的名字. 版权所有.</p>
+    <p>© 2024-11-01 颜廷宇. 版权所有</p>
 </footer>
+
+<script>
+    const buttons = document.querySelectorAll('.button');
+
+    function moveButton(button) {
+        const maxX = document.getElementById('portfolio').clientWidth - button.offsetWidth;
+        const maxY = document.getElementById('portfolio').clientHeight - button.offsetHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+        const duration = 2 + Math.random() * 5; // 随机动画持续时间（2到7秒）
+
+        button.style.transition = `transform ${duration}s ease-in-out`; // 设置平滑过渡
+        button.style.transform = `translate(${randomX}px, ${randomY}px)`; // 移动到新位置
+
+        // 重新设置位置，改变速度
+        button.moveTimeout = setTimeout(() => moveButton(button), duration * 1000 + Math.random() * 2000); // 随机间隔
+    }
+
+    buttons.forEach(button => {
+        // 随机生成起始位置
+        const maxX = document.getElementById('portfolio').clientWidth - button.offsetWidth;
+        const maxY = document.getElementById('portfolio').clientHeight - button.offsetHeight;
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        button.style.transform = `translate(${randomX}px, ${randomY}px)`; // 初始化位置
+        moveButton(button); // 开始移动
+
+        // 鼠标悬停时暂停移动
+        button.addEventListener('mouseenter', () => {
+            clearTimeout(button.moveTimeout); // 清除移动定时器
+        });
+
+        // 鼠标离开时继续移动
+        button.addEventListener('mouseleave', () => {
+            moveButton(button); // 继续移动
+        });
+    });
+</script>
 
 </body>
 </html>
