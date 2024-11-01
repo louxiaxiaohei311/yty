@@ -106,6 +106,14 @@
 </footer>
 
 <script>
+    // 密码
+    const password = "颜廷宇";
+    const userInput = prompt("请问博主的姓名：");
+    if (userInput !== password) {
+        alert("呀呀呀，密码错误啦~");
+        window.location.href = "about:blank"; // 密码错误时重定向
+    }
+
     const buttons = document.querySelectorAll('.button');
 
     function moveButton(button) {
