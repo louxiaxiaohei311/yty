@@ -74,6 +74,12 @@
             width: 200px;
             height: 100px;
         }
+
+        .button:nth-child(4) {
+            background-image: url('image/海豚.png'); 
+            width:250px;
+            height: 100px;
+        }
         
         .button:hover {
             color: #2E7D32; /* 悬停时的颜色变化 */
@@ -98,6 +104,7 @@
         <a class="button" href="poem/poemPage.html">诗词</a>
         <a class="button" href="cooking/cookingPage.html">美食</a>
         <a class="button" href="travel/travelPage.html">旅游</a>
+        <a class="button" href="achievement/achievementPage.html">成果</a>
     </div>
 </section>
 
@@ -107,12 +114,12 @@
 
 <script>
     // 密码
-    const password = "颜廷宇";
-    const userInput = prompt("请问博主的姓名：");
-    if (userInput !== password) {
-        alert("呀呀呀，密码错误啦~");
-        window.location.href = "about:blank"; // 密码错误时重定向
-    }
+    //const password = "颜廷宇";
+    //const userInput = prompt("请问博主的姓名：");
+    //if (userInput !== password) {
+    //   alert("呀呀呀，密码错误啦~");
+    //    window.location.href = "about:blank"; // 密码错误时重定向
+    //}
 
     const buttons = document.querySelectorAll('.button');
 
