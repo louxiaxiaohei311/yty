@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>成果展示</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .directory {
-            background: #fff;
-            padding: 15px;
-            margin: 10px auto;
-            border-radius: 5px;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .directory a {
-            display: block;
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 10px 0;
-            transition: color 0.3s;
-        }
-        .directory a:hover {
-            color: #2E7D32;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成果展示</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      background: url('image/知网.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .pdf-link {
+      position: absolute;
+      left: 20%;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .pdf-link:hover {
+      background-color: rgba(46,125,50,0.8);
+      color: white;
+    }
+
+    /* 链接依次从上往下排列，按百分比高度布局 */
+    #link1 { top: 38%; }
+    #link2 { top: 44%; }
+    #link3 { top: 50%; }
+    #link4 { top: 56%; }
+    #link5 { top: 62%; }
+    #link6 { top: 68%; }
+    #link7 { top: 74%; }
+    #link8 { top: 80%; }
+    #link9 { top: 86%; }
+  </style>
 </head>
 <body>
 
-<h1>成果展示</h1>
-
-<div class="directory">
-    <a href="pdf/一种多功能垃圾落叶清理机.pdf" target="_blank">一种多功能垃圾落叶清理机</a>
-    <a href="pdf/全自动餐具分类回收一体机的设计.pdf">全自动餐具分类回收一体机的设计</a>
-    <a href="pdf/吸摘式水果采摘包装一体机的设计.pdf">吸摘式水果采摘包装一体机的设计</a>
-    <a href="pdf/多地形、多功能落叶垃圾清理机的设计.pdf">多地形、多功能落叶垃圾清理机的设计</a>
-    <a href="pdf/压印成形仿真软件.pdf">压印成形仿真软件</a>
-    <a href="pdf/Isogeometric Analysis-Based Solidification Simulation and an Improved Way to Apply Supercooling on Droplet Boundary.pdf">Isogeometric Analysis-Based Solidification Simulation and an Improved Way to Apply Supercooling on Droplet Boundary</a>
-    <a href="pdf/Isogeometric analysis based investigation on material filling of coin cavities.pdf">Isogeometric analysis based investigation on material filling of coin cavities</a>
-    <a href="pdf/等几何算法在金属成形过程中的研究.pdf">等几何算法在金属成形过程中的研究</a>
-    <a href="pdf/先进数值方法的工程应用.pdf">先进数值方法的工程应用</a>
+<div class="container">
+  <a id="link1" class="pdf-link" href="pdf/一种多功能垃圾落叶清理机.pdf" target="_blank">[专利] 一种多功能垃圾落叶清理机</a>
+  <a id="link2" class="pdf-link" href="pdf/全自动餐具分类回收一体机的设计.pdf" target="_blank">[中文期刊] 全自动餐具分类回收一体机的设计</a>
+  <a id="link3" class="pdf-link" href="pdf/吸摘式水果采摘包装一体机的设计.pdf" target="_blank">[中文期刊] 吸摘式水果采摘包装一体机的设计</a>
+  <a id="link4" class="pdf-link" href="pdf/多地形、多功能落叶垃圾清理机的设计.pdf" target="_blank">[本科毕业论文] 多地形、多功能落叶垃圾清理机的设计</a>
+  <a id="link5" class="pdf-link" href="pdf/压印成形仿真软件.pdf" target="_blank">[软件开发] 压印成形仿真软件</a>
+  <a id="link6" class="pdf-link" href="pdf/Isogeometric Analysis-Based Solidification Simulation and an Improved Way to Apply Supercooling on Droplet Boundary.pdf" target="_blank">[SCI] Isogeometric Analysis-Based Solidification Simulation and an Improved Way to Apply Supercooling on Droplet Boundary</a>
+  <a id="link7" class="pdf-link" href="pdf/Isogeometric analysis based investigation on material filling of coin cavities.pdf" target="_blank">[SCI] Isogeometric analysis based investigation on material filling of coin cavities</a>
+  <a id="link8" class="pdf-link" href="pdf/等几何算法在金属成形过程中的研究.pdf" target="_blank">[硕士毕业论文] 等几何算法在金属成形过程中的研究</a>
+  <a id="link9" class="pdf-link" href="pdf/先进数值方法的工程应用.pdf" target="_blank">[书籍] 先进数值方法的工程应用</a>
 </div>
 
 </body>

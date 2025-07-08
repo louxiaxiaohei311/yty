@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奖牌展示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .medal-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+        }
+        .medal {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .medal img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .medal h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .medal p {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="medal-container">
+        <!-- Gold Medal -->
+        <div class="medal">
+            <img src="gold-medal.png" alt="Gold Medal">
+            <h3>金奖</h3>
+            <p>描述或获奖年份</p>
+        </div>
+        <!-- Silver Medal -->
+        <div class="medal">
+            <img src="silver-medal.png" alt="Silver Medal">
+            <h3>银奖</h3>
+            <p>描述或获奖年份</p>
+        </div>
+        <!-- Bronze Medal -->
+        <div class="medal">
+            <img src="bronze-medal.png" alt="Bronze Medal">
+            <h3>铜奖</h3>
+            <p>描述或获奖年份</p>
+        </div>
+    </div>
+</body>
+</html>

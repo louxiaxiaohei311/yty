@@ -9,21 +9,25 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-image: url('backImage.png'); /* 背景图路径 */
+			background-size: cover;                /* 背景图铺满 */
+			background-position: center;           /* 居中对齐 */
+			background-attachment: fixed;          /* 滚动时背景固定 */
+			background-repeat: no-repeat;          /* 不重复 */
         }
         h1 {
             text-align: center;
             color: #333;
         }
-        .dish {
-            background: #fff;
-            padding: 15px;
-            margin: 10px auto;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            max-width: 600px;
-        }
+		.dish {
+			background: rgba(255, 255, 255, 0.85); /* 半透明白底 */
+			padding: 15px;
+			margin: 10px auto;
+			border-radius: 5px;
+			display: flex;
+			align-items: center;
+			max-width: 600px;
+		}
         .dish img {
             width: 100px; /* 图片宽度 */
             height: auto;

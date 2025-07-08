@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>诗词</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .directory {
-            background: #fff;
-            padding: 15px;
-            margin: 10px auto;
-            border-radius: 5px;
-            max-width: 600px;
-            text-align: center;
-        }
-        .directory a {
-            display: block;
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 5px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>诗词</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: url('image/竹简.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .link {
+      position: absolute;
+      top: 20%; /* 所有链接从同一高度起始 */
+      writing-mode: vertical-rl; /* 竖排，从上往下写，从右往左排 */
+      text-orientation: upright;
+      text-decoration: none;
+      color: #333;
+      font-size: 22px;
+      /* background-color: rgba(255, 255, 255, 0.7); */
+      padding: 10px 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .link:hover {
+      background-color: rgba(46, 125, 50, 0.8);
+      color: white;
+    }
+
+    /* 每个链接横向位置（右 → 左） */
+    #link1 { right: 14%; }
+    #link2 { right: 18%; }
+    #link3 { right: 22.3%; }
+    #link4 { right: 26.5%; }
+  </style>
 </head>
 <body>
 
-<h1>诗词</h1>
-<div class="directory">
-    <a href="subPage/mountainPage.html">山行</a>
-</div>
-
-<div class="directory">
-    <a href="subPage/sprinWorkPage.html">24年初春早晨上班有感</a>
-</div>
-
-<div class="directory">
-   <a href="#" onclick="checkPassword()">无题</a>
-</div>
-
-<div class="directory">
-    <a href="subPage/travelPage.html">游历感怀</a>
+<div class="container">
+  <a id="link1" class="link" href="subPage/mountainPage.html">山 行</a>
+  <a id="link2" class="link" href="subPage/sprinWorkPage.html">初 春 上 班 有 感</a>
+  <a id="link3" class="link" href="#" onclick="checkPassword()">无 题</a>
+  <a id="link4" class="link" href="subPage/travelPage.html">游 历 感 怀</a>
 </div>
 
 <script>
-    function checkPassword() {
-        var password = prompt("请输入密码：");
-        var correctPassword = "20240726"; 
-
-        if (password === correctPassword) {
-            window.location.href = "subPage/hongLi.html";
-        } else {
-            alert("呀呀呀，密码错误啦~"); 
-        }
+  function checkPassword() {
+    var password = prompt("请输入密码：");
+    var correctPassword = "20240726"; 
+    if (password === correctPassword) {
+      window.location.href = "subPage/hongLi.html";
+    } else {
+      alert("呀呀呀，密码错误啦~");
     }
+  }
 </script>
 
 </body>

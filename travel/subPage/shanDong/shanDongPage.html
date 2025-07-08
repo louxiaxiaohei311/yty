@@ -17,11 +17,13 @@
         }
         .gallery {
             display: flex; /* 水平排列相册 */
+            flex-wrap: wrap; /* 允许换行 */
             gap: 30px; /* 相册之间的间距 */
+            justify-content: center; /* 居中对齐 */
         }
         .album {
-            width: 180px; /* 每个相册的宽度，设置为16:9比例 */
-            height: 320px; /* 每个相册的高度，设置为16:9比例 */
+            width: 180px; /* 每个相册的宽度 */
+            height: 320px; /* 每个相册的高度 */
             border: 2px solid #ccc;
             border-radius: 15px; /* 圆角 */
             overflow: hidden;
@@ -62,35 +64,27 @@
 <body>
 
 <div class="gallery">
-    <div class="album" onclick="window.location.href='subPage/jiangSu/jiangSuPage.html'">
-        <img src="images/江苏.jpg" alt="江苏">
+    <div class="album" onclick="window.location.href='subPage/jiNan/jiNanPage.html'">
+        <img src="images/济南.jpg" alt="济南">
     </div>
-    <div class="album" onclick="window.location.href='subPage/zheJiang/zheJiangPage.html'">
-        <img src="images/浙江.jpg" alt="浙江">
+    <div class="album" onclick="window.location.href='subPage/ziBo/ziBoPage.html'">
+        <img src="images/淄博.jpg" alt="淄博">
     </div>
-    <div class="album" onclick="window.location.href='subPage/shangHai/shangHaiPage.html'">
-        <img src="images/上海.jpg" alt="上海">
+    <div class="album" onclick="window.location.href='subPage/zaoZhuang/zaoZhuangPage.html'">
+        <img src="images/枣庄.jpg" alt="枣庄">
     </div>
-<!--
-    <div class="album" onclick="window.location.href='subPage/anHui/anHuiPage.html'">
-        <img src="images/安徽.jpg" alt="安徽">
+    <div class="album" onclick="window.location.href='subPage/weiFang/weiFangPage.html'">
+        <img src="images/潍坊.jpg" alt="潍坊">
     </div>
-    <div class="album" onclick="window.location.href='subPage/beiJing/beiJingPage.html'">
-        <img src="images/安徽.jpg" alt="北京">
+    <div class="album" onclick="window.location.href='subPage/taiAn/taiAnPage.html'">
+        <img src="images/泰安.jpg" alt="泰安">
     </div>
-    <div class="album" onclick="window.location.href='subPage/jiangXi/jiangXiPage.html'">
-        <img src="images/江西.jpg" alt="江西">
+    <div class="album" onclick="window.location.href='subPage/binZhou/binZhouPage.html'">
+        <img src="images/滨州.jpg" alt="滨州">
     </div>
-    <div class="album" onclick="window.location.href='subPage/neiMengGu/neiMengGuPage.html'">
-        <img src="images/江西.jpg" alt="内蒙古">
+    <div class="album" onclick="window.location.href='subPage/linYi/linYi.html'">
+        <img src="images/临沂.jpg" alt="临沂">
     </div>
-    <div class="album" onclick="window.location.href='subPage/shanDong/shanDongPage.html'">
-        <img src="images/山东.jpg" alt="山东">
-    </div>
-    <div class="album" onclick="window.location.href='subPage/tianJin/tianJinPage.html'">
-        <img src="images/天津.jpg" alt="天津">
-    </div>
--->
 </div>
 
 </body>
