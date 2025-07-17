@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>马拉松</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+    }
+    body {
+      background: url('image/马拉松.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      position: relative;
+      width: 90vw;
+      height: 90vh;
+      margin: auto;
+      border: 1px solid transparent; /* 可删 */
+    }
+	.item-link {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 13vw;      /* 宽度用视口宽度的10% */
+		height: 13vw;     /* 高度保持和宽度相等，圆形 */
+		border-radius: 50%;
+		background-color: transparent;
+		/*border: 2px solid #4CAF50;*/
+		border: none;
+		color: #fff;
+		font-size: 1.2vw; /* 字体大小也用vw单位 */
+		text-align: center;
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+    /* 自定义位置，百分比，相对于 .container */
+    .btn1 { top: 52%; left: 3%; }
+    .btn2 { top: 51%; left: 23%; }
+    .btn3 { top: 56%; left: 41%; }
+    .btn4 { top: 58%; left: 58%; }
+    .btn5 { top: 42%; left: 73%; }
+    .btn6 { top: 56%; left: 88%; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a href="subPage/20241116上海小昆山半马/shxksPage.html" class="item-link btn1" title="上海小昆山半马"></a>
+  <a href="subPage/20241229湖州德清半马/hzdqPage.html" class="item-link btn2" title="湖州德清半马"></a>
+  <a href="subPage/20250309苏州太湖数字半马/szthszPage.html" class="item-link btn3" title="苏州太湖数字半马"></a>
+  <a href="subPage/20250330绍兴上虞半马/sxsyPage.html" class="item-link btn4" title="绍兴上虞半马"></a>
+  <a href="subPage/20250412上海马桥半马/shmqPage.html" class="item-link btn5" title="上海马桥半马"></a>
+  <a href="subPage/20250420常州天宁半马/cztnPage.html" class="item-link btn6" title="常州天宁半马"></a>
+</div>
+
+</body>
+</html>
